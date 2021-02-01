@@ -1,11 +1,37 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+  <title>
+    <%= title %>
+  </title>
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+</head>
+
+<body>
+  <% include header %>
+    <p>
+      <%= title%> , la plataforma líder de compraventa en productos de Segunda mano.
+    </p>
+    <h2>Artículos Destacados</h2>
+
+    <div class="listado">
+      <% anuncios.forEach(anuncio=> { %>
+        <h3>Anuncio</h3>
+        <p>Imagen:<%= anuncios.foto %>
+        </p>
+        <p>Nombre:<%= anuncios.nombre %>
+        </p>
+        <p>Venta:<%= anuncios.venta %>
+            Precio:<%= anuncios.precio %>
+        </p>
+        <p>tags:<%= anuncios.tags %>
+        </p>
+
+        <% }) %>
+    </div>
+
+    <% include footer %>
+</body>
+
 </html>

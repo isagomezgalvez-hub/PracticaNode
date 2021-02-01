@@ -13,6 +13,9 @@ require('./lib/ install_db')
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+//global variable for templates
+app.locals.title = 'NodePop';
+
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
