@@ -11,7 +11,9 @@ require('./lib/ install_db')
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
-app.set('view engine', 'ejs');
+app.set('view engine', 'html');
+app.engine('html', require('ejs').__express);
+
 
 //global variable for templates
 app.locals.title = 'NodePop';

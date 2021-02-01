@@ -9,7 +9,7 @@
 </head>
 
 <body>
-  <% include header %>
+  <% include header.html %>
     <p>
       <%= title%> , la plataforma líder de compraventa en productos de Segunda mano.
     </p>
@@ -27,11 +27,10 @@
         </p>
         <p>tags:<%= anuncios.tags %>
         </p>
-
         <% }) %>
     </div>
 
-    <% include footer %>
+    <% include footer.html %>
 </body>
 
 </html>
