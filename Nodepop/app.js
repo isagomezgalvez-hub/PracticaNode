@@ -15,7 +15,7 @@ app.set('views', path.join(__dirname, 'views'));
 //cambiar la extensión de vistas
 app.set('view engine', 'html');
 app.engine('html', require('ejs').__express);
-app.locals.title = 'NodeAPI'
+app.locals.title = 'Nodepop'
 
 
 app.use(logger('dev'));
