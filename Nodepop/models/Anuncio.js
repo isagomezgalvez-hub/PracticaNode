@@ -1,20 +1,26 @@
 'use strict'
 const mongoose = require('mongoose');
 
-//Definimos un Schema
+
+// Define Schema for the model
 const anuncioSchema = mongoose.Schema({
-	nombre: String,
+	nombre: { type: String, index: true },
 	venta: Boolean,
-	precio: Number,
+	precio: { type: Number, index: true },
 	foto: String,
-	tags: [String]
+	tags: { type: [String], index: true }
+}, {
+	collection: 'anuncios'
 });
 
 
-//Creamos el modelo
+anuncioSchema.statics.lista = function (filtro) {
+	const query = Anuncio.find(filtro);
+	return query.exec();
+}
 
+//Create the model
 const Anuncio = mongoose.model('Anuncio', anuncioSchema);
 
-//Exportamos el modelo
-
+//Export model
 module.exports = Anuncio;

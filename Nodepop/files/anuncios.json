@@ -21,13 +21,13 @@
 			]
 		},
 		{
-			"nombre": "otroIphones",
+			"nombre": "Coche",
 			"venta": false,
-			"precio": 50.00,
-			"foto": "iphone.jpg",
+			"precio": 500.00,
+			"foto": "coche.jpg",
 			"tags": [
 				"lifestyle",
-				"mobile"
+				"motor"
 			]
 		}
 	]

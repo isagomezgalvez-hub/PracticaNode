@@ -10,4 +10,11 @@ npm start
 
 
 ## Cargar la Base de datos
+npm run installDB
 
+
+
+## API Methods
+### POST /api/anuncios
+
+Get a list of products (ads)

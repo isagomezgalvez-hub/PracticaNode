@@ -1,19 +1,22 @@
 'use strict';
 
 const mongoose = require('mongoose');
+const mongoBaseDatos = 'mongodb://localhost/nodepop'
 
-// Conectar con la Base de Datos
+// Connect to the Database
+mongoose.connect(mongoBaseDatos, {
+	useNewUrlParser: true,
+	useUnifiedTopology: true,
+	useCreateIndex: true
+});
+
+
 mongoose.connection.on('error', err => {
-	console.log('Error de conexión', err);
+	console.log('Error de conexión', err);// Show connection error
 	process.exit(1);
 });
 
-mongoose.connect('mongodb://localhost/nodepop', {
-	useNewUrlParser: true,
-	useUnifiedTopology: true
-});
-
-//Conecta correctamente Base Datos
+//Successful connection to database
 console.log('Conectado a MongoDB en', mongoose.connection.name)
 
 
