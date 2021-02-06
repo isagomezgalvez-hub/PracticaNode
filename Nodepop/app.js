@@ -15,7 +15,7 @@ app.set('views', path.join(__dirname, 'views'));
 //cambiar la extensión de vistas
 app.set('view engine', 'html');
 app.engine('html', require('ejs').__express);
-app.locals.title = 'Nodepop'
+app.locals.title = 'NodePop'
 
 
 app.use(logger('dev'));
@@ -27,17 +27,23 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
-app.use('/', require('./routes/index'));
+//app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 
-/**
- * Rutas del Api
- */
-app.use('/api/anuncios', require('./routes/api/anuncios'));
 
-/**
- * Rutas del Website
- */
+//Routes of Api
+
+// Pendiente crear una llamada al listado general de productos en API
+app.use('/apiv1/anuncios', require('./routes/api/anuncios'));
+app.use('/apiv1/anuncios/tags', require('./routes/api/anuncios'));
+
+
+// Routes of Website
+
+//General list of products
+app.use('/', require('./routes/index'));
+app.use('/anuncios', require('./routes/api/anuncios'));
+
 
 
 // catch 404 and forward to error handler

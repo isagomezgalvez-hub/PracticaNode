@@ -12,12 +12,18 @@ const { read, readFile, readFileSync } = require('fs');
 
 require('./connectMongoose');
 
+
+
 //Iniciar el proceso
 mongoose.connection.once('open', async (req, res, next) => {
 	try {
 
-		// Clear the data from the database
-		mongoose.connection.dropDatabase();
+		//Clean Data in Data Base
+		Anuncio.deleteMany(function (err, result) {
+			if (err) {
+				return cb(err);
+			}
+		});
 
 		//Read ad data.json
 		const newData = readFileSync('files/anuncios.json');

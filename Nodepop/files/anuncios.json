@@ -3,7 +3,7 @@
 		{
 			"nombre": "Bicicleta",
 			"venta": true,
-			"precio": 230.15,
+			"precio": 40,
 			"foto": "bici.jpg",
 			"tags": [
 				"lifestyle",
@@ -23,7 +23,7 @@
 		{
 			"nombre": "Coche",
 			"venta": false,
-			"precio": 500.00,
+			"precio": 10,
 			"foto": "coche.jpg",
 			"tags": [
 				"lifestyle",
