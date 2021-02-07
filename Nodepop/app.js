@@ -30,7 +30,6 @@ app.use('/users', require('./routes/users'));
 
 
 //Routes of Api
-// Pendiente crear una llamada al listado general de productos en API
 app.use('/apiv1/anuncios', require('./routes/api/anuncios'));
 app.use('/apiv1/anuncios/tags', require('./routes/api/anuncios'));
 
