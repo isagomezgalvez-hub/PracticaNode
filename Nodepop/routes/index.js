@@ -51,7 +51,6 @@ router.get('/', async function (req, res, next) {
       filtro.tags = tag;
     }
 
-
     const fields = req.query.fields;
     const skip = parseInt(req.query.skip);
     const limit = parseInt(req.query.limit);

@@ -25,25 +25,20 @@ app.use(cookieParser());
 
 //middleware de ficheros estáticos
 app.use(express.static(path.join(__dirname, 'public')));
-
-
 //app.use('/', require('./routes/index'));
 app.use('/users', require('./routes/users'));
 
 
 //Routes of Api
-
 // Pendiente crear una llamada al listado general de productos en API
 app.use('/apiv1/anuncios', require('./routes/api/anuncios'));
 app.use('/apiv1/anuncios/tags', require('./routes/api/anuncios'));
 
 
 // Routes of Website
-
 //General list of products
 app.use('/', require('./routes/index'));
-app.use('/anuncios', require('./routes/api/anuncios'));
-
+//app.use('/anuncios', require('./routes/index'));
 
 
 // catch 404 and forward to error handler
